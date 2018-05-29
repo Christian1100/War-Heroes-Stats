@@ -15,7 +15,7 @@ client.on('message', msg => {
     
     if (author.id != client.user.id && cont.startsWith(';'))
     {
-        msg.channel.send('pong');
+        msg.author.sendMessage('This is a secret message that you should not pass on :wink:')
     }
 });
 
