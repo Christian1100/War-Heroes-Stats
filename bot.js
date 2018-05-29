@@ -15,7 +15,10 @@ client.on('message', msg => {
     
     if (author.id != client.user.id && cont.startsWith(';'))
     {
-        msg.channel.sendMessage('pong');
+        if(message.content.startsWith(";ping")) 
+        {
+            message.channel.send(new Date().getTime() - message.createdTimestamp + " ms");        
+        }
     }
 });
 
