@@ -8,10 +8,10 @@ client.on("ready", async() => {
 });
 
 const prefix = ";";
-client.on("message", async(message) => {
+client.on("message", (message) => {
   if (!message.content.startsWith(prefix)) return;
 
-  if (message.content.startsWith("ping")) {
-    await message.channel.send(new Date().getTime() - msg.createdTimestamp + " ms");
+  if (message.content.startsWith(prefix + "ping")) {
+    message.channel.send(new Date().getTime() - msg.createdTimestamp + " ms");
   }
 });
