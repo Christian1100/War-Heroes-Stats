@@ -9,7 +9,7 @@ client.on("ready", async() => {
 
 let prefix = ";";
 client.on("message", async(message) => {
-	if (message.content.startsWith(`${prefix}ping`)) {
+	if (message.content.startsWith(`;{prefix}ping`)) {
 		await message.channel.send(new Date().getTime() - msg.createdTimestamp + " ms");
 	}
 });
