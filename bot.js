@@ -11,7 +11,7 @@ const prefix = ";";
 client.on("message", async(message) => {
   if (!message.content.startsWith(prefix)) return;
 
-  if (message.content.startsWith(prefix + "ping")) {
+  if (message.content.startsWith("ping")) {
     await message.channel.send(new Date().getTime() - msg.createdTimestamp + " ms");
   }
 });
