@@ -7,11 +7,17 @@ client.on("ready", async() => {
     console.log("Bot is online!");
 });
 
-     if (author.id != client.user.id && cont.startsWith(';'))
-     {
-       if(cont.startsWith(';ping')) 
-         {      
+client.on('message', msg => {
+    var cont = msg.content;
+    author = msg.member;
+    chan = msg.channel;
+    guild = msg.guild;
+    
+    if (author.id != client.user.id && cont.startsWith(';'))
+    {
+        if(cont.startsWith(';ping')) 
+        {
             msg.channel.send(new Date().getTime() - msg.createdTimestamp + ' ms');        
-         }
-     }
- });
+        }
+    }
+});
