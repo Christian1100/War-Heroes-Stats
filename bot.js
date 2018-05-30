@@ -7,9 +7,11 @@ client.on("ready", async() => {
     console.log("Bot is online!");
 });
 
-let prefix = ";"
+const prefix = ";";
 client.on("message", async(message) => {
-	if (message.content.startsWith(`${prefix}ping`)) {
-		await message.channel.send(new Date().getTime() - msg.createdTimestamp + " ms");
-	}
+  if (!message.content.startsWith(prefix)) return;
+
+  if (message.content.startsWith(prefix + "ping")) {
+    await message.channel.send(new Date().getTime() - msg.createdTimestamp + " ms");
+  }
 });
